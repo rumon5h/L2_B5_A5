@@ -5,12 +5,6 @@ export enum Role {
   RIDER = "RIDER",
   DRIVER = "DRIVER",
 }
-
-export enum IsBlocked {
-  UNBLOCKED = "UNBLOCKED",
-  BLOCKED = "BLOCKED"
-}
-
 export interface IAuthProvider {
   provider: "google" | "credentials";
   providerId: string;
@@ -22,6 +16,11 @@ export enum RiderStatus {
   WAITING = "WAITING",
   PICKED_UP = "PICKED_UP",
   ON_RIDE = "ON_RIDE"
+}
+
+export enum IsBlocked {
+  UNBLOCKED = "UNBLOCKED",
+  BLOCKED = "BLOCKED"
 }
 
 export interface IUser {
