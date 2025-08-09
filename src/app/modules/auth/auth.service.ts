@@ -28,7 +28,7 @@ const changePassword = async (oldPassword: string, newPassword: string, decodedT
 
     const isOldPasswordMatch = await bcryptjs.compare(oldPassword, user!.password as string)
     if (!isOldPasswordMatch) {
-        throw new AppError(httpStatus.UNAUTHORIZED, "Old Password does not match");
+        throw new AppError(httpStatus.UNAUTHORIZED, "Old password does not match");
     }
 
     user!.password = await bcryptjs.hash(newPassword, Number(envVars.BCRYPT_SALT_ROUND))
@@ -37,10 +37,11 @@ const changePassword = async (oldPassword: string, newPassword: string, decodedT
 }
 
 const setPassword = async (userId: string, plainPassword: string) => {
+    console.log("Setting password for user: ", userId)
     const user = await User.findById(userId);
 
     if (!user) {
-        throw new AppError(404, "User Not Found")
+        throw new AppError(404, "User not found")
     }
 
     if (user.password && user.auths.some(providerObject => providerObject.provider === "google")) {
