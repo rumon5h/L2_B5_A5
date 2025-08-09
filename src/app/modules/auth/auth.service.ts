@@ -37,6 +37,7 @@ const changePassword = async (oldPassword: string, newPassword: string, decodedT
 }
 
 const setPassword = async (userId: string, plainPassword: string) => {
+    console.log("Setting password for user: ", userId)
     const user = await User.findById(userId);
 
     if (!user) {

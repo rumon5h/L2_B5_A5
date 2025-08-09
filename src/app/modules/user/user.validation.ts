@@ -70,11 +70,13 @@ export const updateUserZodSchema = z.object({
         })
         .optional(),
 })
+
 export const updateOwnProfileUserZodSchema = z.object({
     name: z
         .string({ message: "Name must be string" })
         .min(2, { message: "Name must be at least 2 characters long." })
-        .max(50, { message: "Name cannot exceed 50 characters." }).optional(),
+        .max(50, { message: "Name cannot exceed 50 characters." })
+        .optional(),
     phone: z
         .string({ message: "Phone Number must be string" })
         .regex(/^(?:\+8801\d{9}|01\d{9})$/, {
