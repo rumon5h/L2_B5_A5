@@ -271,20 +271,13 @@ SMTP_USER=
 SMTP_PASS=
 SMTP_FROM=
 3. Install Dependencies
-bash
-Copy
-Edit
+
 npm install
 4. Start Development Server
-bash
-Copy
-Edit
+
 npm run dev
 📍 API Documentation
 You can import the Postman collection from:
 
-pgsql
-Copy
-Edit
 Postman_Collection/B5-A5_Postman_Collection.json
 This includes all routes, sample requests, and expected responses.
