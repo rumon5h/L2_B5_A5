@@ -98,11 +98,36 @@ The project emphasizes **security**, **scalability**, and a **modular architectu
 - **Email**: `rider@rider.com`  
 - **Password**: `Ri$2fd123@`
 
+---
+
+## 📁 Project Structure
+
+├── .gitignore
+├── README.md
+├── eslint.config.mjs
+├── package.json
+├── tsconfig.json
+├── vercel.json
+├── src/
+│ ├── server.ts
+│ ├── app.ts
+│ └── app/
+│ │ ├── config/
+│ │ ├── errorHelpers/
+│ │ ├── helpers/
+│ │ ├── interfaces/
+│ │ ├── middlewares/
+│ │ ├── modules/
+│ │ ├── routes/
+│ │ └── utils/
+
+---
+
 ## Api endpoints and sample data for testing
 
 ### 1. Create new user by credential: method POST
 ```
-https://l2-b5-a5.vercel.app/api/v1/users/register
+http://localhost:4000/api/v1/users/register
 ```
 
 ```json
@@ -115,12 +140,12 @@ https://l2-b5-a5.vercel.app/api/v1/users/register
 
 ### 1.1 Create new user by google test on browser
 ```
-https://l2-b5-a5.vercel.app/api/v1/auth/google/
+http://localhost:4000/api/v1/auth/google/
 ```
 
 ### 2. Login by credential: method POST
 ```
-https://l2-b5-a5.vercel.app/api/v1/auth/login
+http://localhost:4000/api/v1/auth/login
 ```
 ```json
 {
@@ -130,7 +155,7 @@ https://l2-b5-a5.vercel.app/api/v1/auth/login
 ```
 ### 3. Get a user data: method GET
 ```
-https://l2-b5-a5.vercel.app/api/v1/users/me/
+http://localhost:4000/api/v1/users/me/
 ```
 ```
 Headers > Authorization = "accessToken" (You can get accessToken by login)
@@ -140,7 +165,7 @@ Headers > Authorization = "accessToken" (You can get accessToken by login)
 ### 4. Get all user: method GET (Only for Admin)
 
 ```
-https://l2-b5-a5.vercel.app/api/v1/users/all-users
+http://localhost:4000/api/v1/users/all-users
 ```
 ```
 Headers > Authorization = "accessToken" (You can get accessToken by login using Admin Credential)
@@ -149,7 +174,7 @@ Headers > Authorization = "accessToken" (You can get accessToken by login using 
 ### 5. Update a user: method PATCH
 
 ```
-https://l2-b5-a5.vercel.app/api/v1/users/6896e0646e1175054a336b0d
+http://localhost:4000/api/v1/users/6896e0646e1175054a336b0d
 ```
 
 ```
@@ -159,7 +184,7 @@ Headers > Authorization = "accessToken" (You can get accessToken by login)
 ### 6. Change user status: method PATCH
 
 ```
-https://l2-b5-a5.vercel.app/api/v1/users/change-status/6896e0646e1175054a336b0d
+http://localhost:4000/api/v1/users/change-status/6896e0646e1175054a336b0d
 ```
 ```
 {
@@ -173,13 +198,13 @@ Headers > Authorization = "accessToken" (You can get accessToken by login using 
 ### 7. Get a user data: GET method (For admin)
 
 ```
-https://l2-b5-a5.vercel.app/api/v1/users/6896e0646e1175054a336b0d
+http://localhost:4000/api/v1/users/6896e0646e1175054a336b0d
 ```
 
 ### 8. Get new access token: method POST
 
 ```
-https://l2-b5-a5.vercel.app/api/v1/auth/refresh-token
+http://localhost:4000/api/v1/auth/refresh-token
 ```
 
 ```
@@ -190,13 +215,13 @@ Headers > Cookie = "refreshToken" (You can get refreshToken by login to test it)
 
 ##### It will clear cookies to logout
 ```
-https://l2-b5-a5.vercel.app/api/v1/auth/logout
+http://localhost:4000/api/v1/auth/logout
 ```
 
 ### 10. Change Password: method POST
 
 ```
-https://l2-b5-a5.vercel.app/api/v1/auth/change-password
+http://localhost:4000/api/v1/auth/change-password
 ```
 
 ```
@@ -213,7 +238,7 @@ Headers > Authorization = "accessToken" (You can get accessToken by login)
 ### 11. Set password: method POST
 
 ```
-https://l2-b5-a5.vercel.app/api/v1/auth/set-password
+http://localhost:4000/api/v1/auth/set-password
 ```
 
 ```
@@ -229,7 +254,7 @@ Headers > Authorization = "accessToken" (You can get accessToken by login)
 ### Forgot Password: method POST
 
 ```
-https://l2-b5-a5.vercel.app/api/v1/auth/forgot-password
+http://localhost:4000/api/v1/auth/forgot-password
 ```
 
 ```
@@ -271,20 +296,14 @@ SMTP_USER=
 SMTP_PASS=
 SMTP_FROM=
 3. Install Dependencies
-bash
-Copy
-Edit
+
 npm install
 4. Start Development Server
-bash
-Copy
-Edit
+
 npm run dev
 📍 API Documentation
 You can import the Postman collection from:
 
-pgsql
-Copy
-Edit
-Postman_Collection/B5-A5_Postman_Collection.json
+
+Postman_A5_Postman_Collection.json
 This includes all routes, sample requests, and expected responses.
